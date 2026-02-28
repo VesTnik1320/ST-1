@@ -29,7 +29,7 @@ TEST(CheckPrimeTest, CheckBigNotPrime) {
     EXPECT_FALSE(checkPrime(1001));
 }
 
-// Тесты для функции nPrime
+// Tests for nPrime function
 TEST(NPrimeTest, nPrimeZero) {
     EXPECT_EQ(nPrime(0), 0);
 }
@@ -48,7 +48,7 @@ TEST(NPrimeTest, nPrimeLargerN) {
     EXPECT_EQ(nPrime(20), 71);
 }
 
-// Тесты для функции nextPrime
+// Tests for nextPrime function
 TEST(NextPrimeTest, nextPrimeZero) {
     EXPECT_EQ(nextPrime(0), 2);
 }
@@ -78,7 +78,7 @@ TEST(NextPrimeTest, HandlesLargeGap) {
     EXPECT_EQ(nextPrime(126), 127);
 }
 
-// Тесты для функции sumPrime
+// Tests for sumPrime function
 TEST(SumPrimeTest, HandlesBoundaryLessThanTwo) {
     EXPECT_EQ(sumPrime(0), 0);
     EXPECT_EQ(sumPrime(1), 0);
