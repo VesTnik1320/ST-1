@@ -20,13 +20,13 @@ TEST(CheckPrimeTest, CheckNotPrime2) {
 }
 
 TEST(CheckPrimeTest, CheckBigPrime) {
-    EXPECT_TRUE(checkPrime(997));      
-    EXPECT_TRUE(checkPrime(1009));     
+    EXPECT_TRUE(checkPrime(997));
+    EXPECT_TRUE(checkPrime(1009));
 }
 
 TEST(CheckPrimeTest, CheckBigNotPrime) {
-    EXPECT_FALSE(checkPrime(1000));    
-    EXPECT_FALSE(checkPrime(1001));    
+    EXPECT_FALSE(checkPrime(1000));
+    EXPECT_FALSE(checkPrime(1001));
 }
 
 // Тесты для функции nPrime
@@ -58,7 +58,7 @@ TEST(NextPrimeTest, nextPrimeOne) {
 }
 
 TEST(NextPrimeTest, nextPrimePrimeInput) {
-    EXPECT_EQ(nextPrime(2), 3);   
+    EXPECT_EQ(nextPrime(2), 3);
     EXPECT_EQ(nextPrime(3), 5);
     EXPECT_EQ(nextPrime(5), 7);
     EXPECT_EQ(nextPrime(7), 11);
@@ -82,18 +82,18 @@ TEST(NextPrimeTest, HandlesLargeGap) {
 TEST(SumPrimeTest, HandlesBoundaryLessThanTwo) {
     EXPECT_EQ(sumPrime(0), 0);
     EXPECT_EQ(sumPrime(1), 0);
-    EXPECT_EQ(sumPrime(2), 0);   
+    EXPECT_EQ(sumPrime(2), 0);
 }
 
 TEST(SumPrimeTest, HandlesSmallBounds) {
-    EXPECT_EQ(sumPrime(3), 2);          
-    EXPECT_EQ(sumPrime(4), 2);          
-    EXPECT_EQ(sumPrime(5), 5);           
-    EXPECT_EQ(sumPrime(6), 5);           
-    EXPECT_EQ(sumPrime(7), 10);         
-    EXPECT_EQ(sumPrime(8), 10);          
-    EXPECT_EQ(sumPrime(9), 17);          
-    EXPECT_EQ(sumPrime(10), 17);        
+    EXPECT_EQ(sumPrime(3), 2);
+    EXPECT_EQ(sumPrime(4), 5);
+    EXPECT_EQ(sumPrime(5), 5);
+    EXPECT_EQ(sumPrime(6), 10);
+    EXPECT_EQ(sumPrime(7), 10);
+    EXPECT_EQ(sumPrime(8), 17);
+    EXPECT_EQ(sumPrime(9), 17);
+    EXPECT_EQ(sumPrime(10), 17);
 }
 
 TEST(SumPrimeTest, HandlesBoundEqualToPrime) {
@@ -105,5 +105,5 @@ TEST(SumPrimeTest, HandlesMediumBound) {
 }
 
 TEST(SumPrimeTest, HandlesBoundWithOnlyOnePrime) {
-    EXPECT_EQ(sumPrime(3), 2);   
+    EXPECT_EQ(sumPrime(3), 2);
 }
