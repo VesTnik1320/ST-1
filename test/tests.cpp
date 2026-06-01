@@ -24,20 +24,20 @@ TEST(CheckPrimeTest, CheckBigNotPrimeWith979And989) {
     EXPECT_FALSE(checkPrime(989));
 }
 
-TEST(NPrimeTest, ChecknPrimeZeroIndex) {
+TEST(NPrimeTest, CheckNPrimeZeroIndex) {
     EXPECT_EQ(nPrime(0), 0);
 }
 
-TEST(NPrimeTest, ChecknPrimeFirstPrime) {
+TEST(NPrimeTest, CheckNPrimeFirstPrime) {
     EXPECT_EQ(nPrime(1), 2);
 }
 
-TEST(NPrimeTest, ChecknPrimeFirstFewPrimes) {
+TEST(NPrimeTest, CheckNPrimeFirstFewPrimes) {
     EXPECT_EQ(nPrime(2), 3);
     EXPECT_EQ(nPrime(3), 5);
 }
 
-TEST(NPrimeTest, ChecknPrimeLargerN) {
+TEST(NPrimeTest, CheckNPrimeLargerN) {
     EXPECT_EQ(nPrime(15), 47);
     EXPECT_EQ(nPrime(20), 71);
 }
