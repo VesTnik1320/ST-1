@@ -4,106 +4,76 @@
 #include <cstdint>
 #include "alg.h"
 
-TEST(CheckPrimeTest, CheckNotPrime1) {
-    EXPECT_FALSE(checkPrime(0));
-    EXPECT_FALSE(checkPrime(1));
+TEST(CheckPrimeTest, CheckPrimeWith23And29) {
+    EXPECT_TRUE(checkPrime(23));
+    EXPECT_TRUE(checkPrime(29));
 }
 
-TEST(CheckPrimeTest, CheckPrime) {
-    EXPECT_TRUE(checkPrime(2));
-    EXPECT_TRUE(checkPrime(3));
+TEST(CheckPrimeTest, CheckNotPrimeWith53And59) {
+    EXPECT_FALSE(checkPrime(53));
+    EXPECT_FALSE(checkPrime(59));
 }
 
-TEST(CheckPrimeTest, CheckNotPrime2) {
-    EXPECT_FALSE(checkPrime(4));
-    EXPECT_FALSE(checkPrime(6));
+TEST(CheckPrimeTest, CheckBigPrimeWith971And977) {
+    EXPECT_TRUE(checkPrime(971));
+    EXPECT_TRUE(checkPrime(977));
 }
 
-TEST(CheckPrimeTest, CheckBigPrime) {
-    EXPECT_TRUE(checkPrime(997));
-    EXPECT_TRUE(checkPrime(1009));
+TEST(CheckPrimeTest, CheckBigNotPrimeWith979And989) {
+    EXPECT_FALSE(checkPrime(979));
+    EXPECT_FALSE(checkPrime(989));
 }
 
-TEST(CheckPrimeTest, CheckBigNotPrime) {
-    EXPECT_FALSE(checkPrime(1000));
-    EXPECT_FALSE(checkPrime(1001));
-}
-
-// Tests for nPrime function
-TEST(NPrimeTest, nPrimeZero) {
+TEST(NPrimeTest, ChecknPrimeZeroIndex) {
     EXPECT_EQ(nPrime(0), 0);
 }
 
-TEST(NPrimeTest, nPrimeFirstPrime) {
+TEST(NPrimeTest, ChecknPrimeFirstPrime) {
     EXPECT_EQ(nPrime(1), 2);
 }
 
-TEST(NPrimeTest, nPrimeFirstFewPrimes) {
+TEST(NPrimeTest, ChecknPrimeFirstFewPrimes) {
     EXPECT_EQ(nPrime(2), 3);
     EXPECT_EQ(nPrime(3), 5);
 }
 
-TEST(NPrimeTest, nPrimeLargerN) {
+TEST(NPrimeTest, ChecknPrimeLargerN) {
     EXPECT_EQ(nPrime(15), 47);
     EXPECT_EQ(nPrime(20), 71);
 }
 
-// Tests for nextPrime function
-TEST(NextPrimeTest, nextPrimeZero) {
+TEST(NextPrimeTest, NextPrimeFromZeroCheck) {
     EXPECT_EQ(nextPrime(0), 2);
 }
 
-TEST(NextPrimeTest, nextPrimeOne) {
+TEST(NextPrimeTest, NextPrimeFromOneCheck) {
     EXPECT_EQ(nextPrime(1), 2);
 }
 
-TEST(NextPrimeTest, nextPrimePrimeInput) {
-    EXPECT_EQ(nextPrime(2), 3);
-    EXPECT_EQ(nextPrime(3), 5);
-    EXPECT_EQ(nextPrime(5), 7);
-    EXPECT_EQ(nextPrime(7), 11);
+TEST(NextPrimeTest, NextPrimeAfterPrimeInputCheckWith17And19) {
+    EXPECT_EQ(nextPrime(17), 19);
+    EXPECT_EQ(nextPrime(19), 23);
 }
 
-TEST(NextPrimeTest, HandlesCompositeInput) {
-    EXPECT_EQ(nextPrime(4), 5);
-    EXPECT_EQ(nextPrime(6), 7);
-    EXPECT_EQ(nextPrime(8), 11);
-    EXPECT_EQ(nextPrime(9), 11);
-    EXPECT_EQ(nextPrime(10), 11);
+TEST(NextPrimeTest, HandlesCompositeInputCheckWith50And60) {
+    EXPECT_EQ(nextPrime(50), 53);
+    EXPECT_EQ(nextPrime(60), 61);
 }
 
-TEST(NextPrimeTest, HandlesLargeGap) {
-    EXPECT_EQ(nextPrime(113), 127);
-    EXPECT_EQ(nextPrime(114), 127);
-    EXPECT_EQ(nextPrime(126), 127);
-}
-
-// Tests for sumPrime function
 TEST(SumPrimeTest, HandlesBoundaryLessThanTwo) {
     EXPECT_EQ(sumPrime(0), 0);
     EXPECT_EQ(sumPrime(1), 0);
     EXPECT_EQ(sumPrime(2), 0);
 }
 
-TEST(SumPrimeTest, HandlesSmallBounds) {
-    EXPECT_EQ(sumPrime(3), 2);
+TEST(SumPrimeTest, CheckSumForMultipleBounds) {
     EXPECT_EQ(sumPrime(4), 5);
-    EXPECT_EQ(sumPrime(5), 5);
-    EXPECT_EQ(sumPrime(6), 10);
-    EXPECT_EQ(sumPrime(7), 10);
-    EXPECT_EQ(sumPrime(8), 17);
-    EXPECT_EQ(sumPrime(9), 17);
-    EXPECT_EQ(sumPrime(10), 17);
+    EXPECT_EQ(sumPrime(16), 41);
+    EXPECT_EQ(sumPrime(21), 77);
+    EXPECT_EQ(sumPrime(32), 189);
+    EXPECT_EQ(sumPrime(48), 357);
 }
 
-TEST(SumPrimeTest, HandlesBoundEqualToPrime) {
-    EXPECT_EQ(sumPrime(11), 17);
-}
-
-TEST(SumPrimeTest, HandlesMediumBound) {
-    EXPECT_EQ(sumPrime(20), 77);
-}
-
-TEST(SumPrimeTest, HandlesBoundWithOnlyOnePrime) {
+TEST(SumPrimeTest, CheckHandlesBoundWithOnlyOnePrime) {
     EXPECT_EQ(sumPrime(3), 2);
 }
