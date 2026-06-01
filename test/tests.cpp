@@ -9,9 +9,9 @@ TEST(CheckPrimeTest, CheckPrimeWith23And29) {
     EXPECT_TRUE(checkPrime(29));
 }
 
-TEST(CheckPrimeTest, CheckNotPrimeWith53And59) {
-    EXPECT_FALSE(checkPrime(53));
-    EXPECT_FALSE(checkPrime(59));
+TEST(CheckPrimeTest, CheckNotPrimeWith52And54) {
+    EXPECT_FALSE(checkPrime(52));
+    EXPECT_FALSE(checkPrime(54));
 }
 
 TEST(CheckPrimeTest, CheckBigPrimeWith971And977) {
