@@ -70,8 +70,8 @@ TEST(SumPrimeTest, CheckSumForMultipleBounds) {
     EXPECT_EQ(sumPrime(4), 5);
     EXPECT_EQ(sumPrime(16), 41);
     EXPECT_EQ(sumPrime(21), 77);
-    EXPECT_EQ(sumPrime(32), 189);
-    EXPECT_EQ(sumPrime(48), 357);
+    EXPECT_EQ(sumPrime(32), 160);
+    EXPECT_EQ(sumPrime(48), 328);
 }
 
 TEST(SumPrimeTest, CheckHandlesBoundWithOnlyOnePrime) {
